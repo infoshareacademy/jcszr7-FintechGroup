@@ -1,0 +1,52 @@
+Aplikacja gie³dowa
+
+SPRINT 1 - aplikacja konsolowa
+
+- powitanie
+- menu z opcjami:
+-- czy wyœwietliæ istniej¹ce dane
+-- czy aktualizowaæ dane 
+-- czy dodaæ nowe dane (nowy profil firmy) 
+-- usuwanie firmy
+
+- wpisane na sztywno wartoœci kursów akcji
+-- kurs otwarcia
+-- kurs zamkniêcia
+-- wzrost/spadek w %
+
+- wpisanie przez u¿ytkownika kolejnych rekordów 
+-- za³o¿enie profilu konkretnej firmy
+--- nazwa firmy
+--- nazwa indexu
+-- aktualizacja danych o kursie konkretnej firmy
+--- wyszukaæ index
+--- wyszukaæ firmê
+--- wpisaæ wartoœæ kursu otwarcia, zamkniêcia
+
+- usuwanie indexu firmy
+-- wyszukanie konkretnej firmy
+-- ¿¹danie usuniêcia firmy
+-- potwierdzenie usuniêcia firmy
+-- wyszukanie indexu firmy
+-- ¿¹danie usuniêcia indexu firmy
+-- potwierdzenie usuniêcia indexu firmy
+
+- pseudo-baza danych w postaci pliku .csv
+
+SPRINT 2 - przeniesienie do app web
+
+- wyœwietlanie
+-- najni¿szy kurs z ostatnich 30 dni (sprint 1 czy 2?)
+-- najwy¿szy kurs z ostatnich 30 dni (sprint 1 czy 2?)
+-- najwy¿szy kurs z ostatnich 7 dni (sprint 1 czy 2?)
+-- najni¿szy kurs z ostatnich 7 dni (sprint 1 czy 2?)
+[powy¿sze mo¿liwe do realizacji, gdy bêdzie baza danych]
+
+- wysy³anie powiadomieñ mailowych dla konkretnego warunku 
+- newsletter tygodniowy z podsumowaniem
+
+- pod³¹czenie do API - automatyzacja aktualizacji danych i dodawania nowych danych (?)
+
+SPRINT 3 - komunikacja z API
+
+- logowanie/rejestracja
