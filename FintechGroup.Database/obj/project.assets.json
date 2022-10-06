@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\maver\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\jcszr7-FintechGroup\\FintechGroup.Database\\FintechGroup.Database.csproj",
+      "projectUniqueName": "C:\\Users\\maver\\OneDrive\\Pulpit\\Projekt\\jcszr7-FintechGroup\\FintechGroup.Database\\FintechGroup.Database.csproj",
       "projectName": "FintechGroup.Database",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\jcszr7-FintechGroup\\FintechGroup.Database\\FintechGroup.Database.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\jcszr7-FintechGroup\\FintechGroup.Database\\obj\\",
+      "projectPath": "C:\\Users\\maver\\OneDrive\\Pulpit\\Projekt\\jcszr7-FintechGroup\\FintechGroup.Database\\FintechGroup.Database.csproj",
+      "packagesPath": "C:\\Users\\maver\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maver\\OneDrive\\Pulpit\\Projekt\\jcszr7-FintechGroup\\FintechGroup.Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maver\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
