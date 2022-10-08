@@ -10,3 +10,15 @@ C:\Users\maver\OneDrive\Pulpit\Projekt\jcszr7-FintechGroup\FintechGroup.Database
 C:\Users\maver\OneDrive\Pulpit\Projekt\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\refint\FintechGroup.Database.dll
 C:\Users\maver\OneDrive\Pulpit\Projekt\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.pdb
 C:\Users\maver\OneDrive\Pulpit\Projekt\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\ref\FintechGroup.Database.dll
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\bin\Debug\net6.0\FintechGroup.Database.deps.json
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\bin\Debug\net6.0\FintechGroup.Database.dll
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\bin\Debug\net6.0\FintechGroup.Database.pdb
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.csproj.AssemblyReference.cache
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.AssemblyInfoInputs.cache
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.AssemblyInfo.cs
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.dll
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\refint\FintechGroup.Database.dll
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\FintechGroup.Database.pdb
+C:\Users\User\Source\Repos\jcszr7-FintechGroup\FintechGroup.Database\obj\Debug\net6.0\ref\FintechGroup.Database.dll
