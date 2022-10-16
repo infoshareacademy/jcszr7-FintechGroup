@@ -49,6 +49,7 @@ namespace FintechGroup
             "4. Zakończ działanie aplikacji\n\n" +
             "Napisz numer preferowanej opcji:");
             Menu2.CallMenu();
+
         }
         
         public static void SelectMainMenuOption(int key)
