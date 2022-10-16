@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using FintechGroup.Database;
 using FintechGroup.Services;
 
-namespace FintechGroup.Services
+namespace FintechGroup
 {
     
 
@@ -48,6 +48,7 @@ namespace FintechGroup.Services
             "3. Wyszukaj lub filtruj \n" +
             "4. Zakończ działanie aplikacji\n\n" +
             "Napisz numer preferowanej opcji:");
+            Menu2.CallMenu();
         }
         
         public static void SelectMainMenuOption(int key)
