@@ -1,5 +1,4 @@
-﻿using FintechGroup.Database;
-using FintechGroup.Services;
+﻿using FintechGroup.Services;
 
 namespace FintechGroup
 {
