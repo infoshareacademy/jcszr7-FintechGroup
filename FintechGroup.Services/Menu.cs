@@ -51,7 +51,7 @@ namespace FintechGroup
                 case ConsoleKey.D1:
                 case ConsoleKey.NumPad1:
                     Console.Clear();
-                    Console.WriteLine("Istniejące rekordy:");
+                    WorksOnRecord.ReadRecordFile();
                     Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
                     var key1 = Console.ReadKey();
 
@@ -77,17 +77,17 @@ namespace FintechGroup
                         case ConsoleKey.D1:
                         case ConsoleKey.NumPad1:
                             Console.Clear();
-                            AddRecord.addrecordname();
+                            WorksOnRecord.AddRecordName();
                             break;
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
-                            //brak funkcji
+                            //brak funkci
                             Console.Clear();
                             break;
                         case ConsoleKey.D3:
                         case ConsoleKey.NumPad3:
                             Console.Clear();
-                            DeleteFile.DeleteRecord();
+                            WorksOnRecord.DeleteRecord();
                             break;
                         case ConsoleKey.Enter:
                             Console.Clear();
