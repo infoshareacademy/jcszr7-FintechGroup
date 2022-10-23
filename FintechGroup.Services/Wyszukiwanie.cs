@@ -1,8 +1,8 @@
 ﻿namespace FintechGroup.Services
 {
-    internal class Wzszukiwanie
+    internal class Wyszukiwanie
     {
-        public static void WzszukiwanieMenu()
+        public static void WyszukiwanieMenu()
         {
             
         }

@@ -16,14 +16,15 @@ namespace FintechGroup
             Console.WriteLine("Czy na pewno chcesz zakończyć działanie aplikacji?\n" +
                 "Naciśnij klawisz 't', jeśli chcesz zakończyć działanie programu.\n" +
                 "Naciśnij klawisz 'n', aby powrócić do menu głównego.");
-            string v = Console.ReadLine();
+            var v = Console.ReadKey();
 
-            if (v == "t")
+            if (v.Key == ConsoleKey.T)
             {
 
                 Console.Clear();
-                Console.WriteLine("Aplikacja zostane zakonczona");
+                Console.WriteLine("Aplikacja zostane zakończona.");
                 Exit.ExitMenu();
+
             }
             else
             {
@@ -41,54 +42,113 @@ namespace FintechGroup
             Menu2.CallMenu();
         }
 
-        public static void SelectMainMenuOption(int key)
+        public static void SelectMainMenuOption(ConsoleKey key)
         {
             switch (key)
             {
-                case 1:
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
                     Console.Clear();
                     Console.WriteLine("Istniejące rekordy:");
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
+                    var key1 = Console.ReadKey();
+
+                    switch (key1.Key)
+                    {
+                        case ConsoleKey.Enter:
+                            Console.Clear();
+                            DisplayAlternativeMenu();
+                            break;
+                    }
                     break;
-                case 2:
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
                     Console.Clear();
                     Console.WriteLine("1. Dodaj nowy rekord");
                     Console.WriteLine("2. Edytuj istniejący rekord");
                     Console.WriteLine("3. Usuń rekord");
-                    Console.WriteLine("4. Wróć do menu głównego");
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
+                    var key2 = Console.ReadKey();
+
+                    switch (key2.Key)
+                    {
+                        case ConsoleKey.Enter:
+                            Console.Clear();
+                            DisplayAlternativeMenu();
+                            break;
+                    }
                     break;
-                case 3:
+                   
+                case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
                     Console.Clear();
                     Console.WriteLine("1. Wyszukaj");
                     Console.WriteLine("2. Filtruj");
-                    Console.WriteLine("3. Wróć do menu głównego");
-                    int vkey = int.Parse(Console.ReadLine());
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
+                    var key3 = Console.ReadKey();
 
-                    switch (vkey)
+                    switch (key3.Key)
                     {
 
-                        case 1:
+                        case ConsoleKey.D1:
+                        case ConsoleKey.NumPad1:
                             Console.Clear();
-                            Wzszukiwanie.WzszukiwanieMenu();
+                            Wyszukiwanie.WyszukiwanieMenu();
                             break;
 
-                        case 2:
+                        case ConsoleKey.D2:
+                        case ConsoleKey.NumPad2:
                             Console.Clear();
                             Filtracja.FiltracjaMenu();
                             break;
 
-                        case 3:
+                        case ConsoleKey.Enter:
                             Console.Clear();
-                            DisplayMainMenu();
+                            DisplayAlternativeMenu();
                             break;
                     }
                     break;
-                case 4:
+                case ConsoleKey.D4:
+                case ConsoleKey.NumPad4:
                     Console.Clear();
                     DisplayMenuFarewell();
                     break;
                 default:
                     Console.Clear();
                     Console.WriteLine("Wybierz prawidłową opcję z przedziału 1-4.\n");
+                    DisplayMainMenu();
+                    break;
+            }
+        }
+
+        public static void DisplayAlternativeMenu()
+        {
+            Console.WriteLine("1. Wróć do głównego menu.\n" +
+               "2. Zakończ działanie aplikacji.\n" +
+               "3. Użyj tej funkcji ponownie.\n");
+            Menu3.AlternativeMenu();
+        }
+
+        public static void SelectAlternativeMenuOptions(ConsoleKey alternativeKey)
+        {
+            switch (alternativeKey)
+            {
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
+                    Console.Clear();
+                    DisplayMainMenu();
+                    break;
+
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    Console.Clear();
+                    DisplayMenuFarewell();
+                    break;
+
+                case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
+                    Console.Clear();
+                    Console.WriteLine("Użyj tej funkcji ponownie.");
                     break;
             }
         }
