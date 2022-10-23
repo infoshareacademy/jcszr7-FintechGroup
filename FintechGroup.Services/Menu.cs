@@ -1,4 +1,5 @@
-﻿using FintechGroup.Services;
+﻿using FintechGroup.Database;
+using FintechGroup.Services;
 
 namespace FintechGroup
 {
@@ -65,13 +66,27 @@ namespace FintechGroup
                 case ConsoleKey.NumPad2:
                     Console.Clear();
                     Console.WriteLine("1. Dodaj nowy rekord");
-                    Console.WriteLine("2. Edytuj istniejący rekord");
+                    Console.WriteLine("2. Dodaj nowy wpis do rekordu");
                     Console.WriteLine("3. Usuń rekord");
                     Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
                     var key2 = Console.ReadKey();
 
                     switch (key2.Key)
                     {
+                        case ConsoleKey.D1:
+                        case ConsoleKey.NumPad1:
+                            Console.Clear();
+                            AddRecord.addrecordname();
+                            break;
+                        case ConsoleKey.D2:
+                        case ConsoleKey.NumPad2:
+                            Console.Clear();
+                            break;
+                        case ConsoleKey.D3:
+                        case ConsoleKey.NumPad3:
+                            Console.Clear();
+                            DeleteFile.DeleteRecord();
+                            break;
                         case ConsoleKey.Enter:
                             Console.Clear();
                             DisplayAlternativeMenu();
@@ -85,9 +100,9 @@ namespace FintechGroup
                     Console.WriteLine("1. Wyszukaj");
                     Console.WriteLine("2. Filtruj");
                     Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
-                    var key3 = Console.ReadKey();
+                    var key4 = Console.ReadKey();
 
-                    switch (key3.Key)
+                    switch (key4.Key)
                     {
 
                         case ConsoleKey.D1:
