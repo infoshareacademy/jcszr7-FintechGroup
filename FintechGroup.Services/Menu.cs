@@ -34,11 +34,12 @@ namespace FintechGroup
         }
         public static void DisplayMainMenu()
         {
-            Console.WriteLine("1. Wyświetl istniejące rekordy\n" +
+            Console.WriteLine(
+            "1. Wyświetl istniejące rekordy\n" +
             "2. Zarządzaj rekordami\n" +
             "3. Wyszukaj lub filtruj \n" +
             "4. Zakończ działanie aplikacji\n\n" +
-            "Napisz numer preferowanej opcji:");
+            "Napisz numer preferowanej opcji:\n");
             Menu2.CallMenu();
         }
 
@@ -49,8 +50,8 @@ namespace FintechGroup
                 case ConsoleKey.D1:
                 case ConsoleKey.NumPad1:
                     Console.Clear();
-                    Console.WriteLine("Istniejące rekordy:");
-                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
+                    WorksOnRecord.ReadRecordFile();
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje\n\n.");
                     var key1 = Console.ReadKey();
 
                     switch (key1.Key)
@@ -65,13 +66,28 @@ namespace FintechGroup
                 case ConsoleKey.NumPad2:
                     Console.Clear();
                     Console.WriteLine("1. Dodaj nowy rekord");
-                    Console.WriteLine("2. Edytuj istniejący rekord");
+                    Console.WriteLine("2. Dodaj nowy wpis do rekordu");
                     Console.WriteLine("3. Usuń rekord");
-                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.\n");
                     var key2 = Console.ReadKey();
 
                     switch (key2.Key)
                     {
+                        case ConsoleKey.D1:
+                        case ConsoleKey.NumPad1:
+                            Console.Clear();
+                            WorksOnRecord.AddRecordName();
+                            break;
+                        case ConsoleKey.D2:
+                        case ConsoleKey.NumPad2:
+                            Console.Clear();
+                            WorksOnRecord.AddRecords();
+                            break;
+                        case ConsoleKey.D3:
+                        case ConsoleKey.NumPad3:
+                            Console.Clear();
+                            WorksOnRecord.DeleteRecord();
+                            break;
                         case ConsoleKey.Enter:
                             Console.Clear();
                             DisplayAlternativeMenu();
@@ -85,20 +101,22 @@ namespace FintechGroup
                     Console.WriteLine("1. Wyszukaj");
                     Console.WriteLine("2. Filtruj");
                     Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
-                    var key3 = Console.ReadKey();
+                    var key4 = Console.ReadKey();
 
-                    switch (key3.Key)
+                    switch (key4.Key)
                     {
 
                         case ConsoleKey.D1:
                         case ConsoleKey.NumPad1:
                             Console.Clear();
+                            //brak funkcji
                             Wyszukiwanie.WyszukiwanieMenu();
                             break;
 
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
                             Console.Clear();
+                            //brak funkcji
                             Filtracja.FiltracjaMenu();
                             break;
 
@@ -123,7 +141,8 @@ namespace FintechGroup
 
         public static void DisplayAlternativeMenu()
         {
-            Console.WriteLine("1. Wróć do głównego menu.\n" +
+            Console.WriteLine(
+               "1. Wróć do głównego menu.\n" +
                "2. Zakończ działanie aplikacji.\n" +
                "3. Użyj tej funkcji ponownie.\n");
             Menu3.AlternativeMenu();
