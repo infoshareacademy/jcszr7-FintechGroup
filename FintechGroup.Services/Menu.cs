@@ -1,5 +1,4 @@
-﻿using FintechGroup.Database;
-using FintechGroup.Services;
+﻿using FintechGroup.Services;
 
 namespace FintechGroup
 {
@@ -40,7 +39,7 @@ namespace FintechGroup
             "2. Zarządzaj rekordami\n" +
             "3. Wyszukaj lub filtruj \n" +
             "4. Zakończ działanie aplikacji\n\n" +
-            "Napisz numer preferowanej opcji:");
+            "Napisz numer preferowanej opcji:\n");
             Menu2.CallMenu();
         }
 
@@ -52,7 +51,7 @@ namespace FintechGroup
                 case ConsoleKey.NumPad1:
                     Console.Clear();
                     WorksOnRecord.ReadRecordFile();
-                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje\n\n.");
                     var key1 = Console.ReadKey();
 
                     switch (key1.Key)
@@ -69,7 +68,7 @@ namespace FintechGroup
                     Console.WriteLine("1. Dodaj nowy rekord");
                     Console.WriteLine("2. Dodaj nowy wpis do rekordu");
                     Console.WriteLine("3. Usuń rekord");
-                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.\n");
                     var key2 = Console.ReadKey();
 
                     switch (key2.Key)
@@ -81,8 +80,8 @@ namespace FintechGroup
                             break;
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
-                            //brak funkci
                             Console.Clear();
+                            WorksOnRecord.AddRecords();
                             break;
                         case ConsoleKey.D3:
                         case ConsoleKey.NumPad3:

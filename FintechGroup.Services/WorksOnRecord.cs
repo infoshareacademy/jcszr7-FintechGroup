@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace FintechGroup.Services
+﻿namespace FintechGroup.Services
 {
     public class WorksOnRecord
     {
@@ -20,6 +18,7 @@ namespace FintechGroup.Services
             fileExists = File.Exists(filename);
 
             Console.WriteLine($"Database stworzona: {File.GetCreationTimeUtc(filename)}");
+            Menu.DisplayMainMenu();
         }
         public static void DeleteRecord()
         {
@@ -28,20 +27,12 @@ namespace FintechGroup.Services
             Console.WriteLine("Wpisy nazwe rekordu do usuniencia: ");
             var authorsFileRead = Console.ReadLine();
             var authorsFile = $"{authorsFileRead}.txt";
-            try
+            if (File.Exists(Path.Combine(rootFolder, authorsFile)))
             {
-                if (File.Exists(Path.Combine(rootFolder, authorsFile)))
-                {
-                    File.Delete(Path.Combine(rootFolder, authorsFile));
-                    Console.WriteLine("\nRecord usunienty\n");
-                }
-                else Console.WriteLine("\nRecord nie znalezony\n");
+                File.Delete(Path.Combine(rootFolder, authorsFile));
+                Console.WriteLine("\nRecord usunienty\n");
             }
-            catch (IOException ioExp)
-            {
-                Console.WriteLine(ioExp.Message);
-            }
-
+            else Console.WriteLine("\nRecord nie znalezony\n");
             Menu.DisplayMainMenu();
         }
         public static void ReadRecordFile()
@@ -61,20 +52,60 @@ namespace FintechGroup.Services
                 }
             }
         }
+        public static void AddRecords()
+        {
+            AllRecord();
+
+            //pobieranie rekordu od uzytkownika
+            Console.WriteLine("Prose zadaj Rekords do kturego chces dodac wpis:");
+            var recordname = Console.ReadLine();
+            Console.WriteLine("Zadaj wartosc zapoczencia sprzedazy:");
+            var startprice = Console.ReadLine();
+            Console.WriteLine("Zadaj wartosc zakonczencia sprzedazy:");
+            var endprice = Console.ReadLine();
+            var recorddate = DateTime.Now.ToString("d");
+
+            //zapisiwanie rekodu
+            using (var writer = File.AppendText($"{recordname}.txt"))
+            {
+                writer.Write($"{startprice};");
+                writer.Write($"{endprice};");
+                writer.WriteLine(recorddate);
+            }
+            Console.WriteLine(
+                $"Wpis zostal ulozony do {recordname}:\n" +
+                $" Start price\t {startprice}\n" +
+                $" End price\t {endprice}\n\n");
+            Menu.DisplayMainMenu();
+        }
 
         public static void AllRecord()
         {
             //string root = new FileInfo(Assembly.GetExecutingAssembly().Location).FullName;
             var root = Directory.GetCurrentDirectory();
             string[] dirs = Directory.GetFiles(root, "*.txt");
-            Console.WriteLine("zaznamy: {0}.", dirs.Length);
-            foreach (string dir in dirs)
-            {
-                // do poprawy wypisiwanie tylko nazw pliku bez stiezki a .txt
-                Console.WriteLine(dir);
-            }
-        }
+            Console.WriteLine("\n W databazy sie znajduje celkem zaznamow: {0}.", dirs.Length);
+            
+            
+                if(dirs.Length == 0)
+                {
+                   AddRecordName();
+                }
+                else
+                {
+                    foreach (string dir in dirs)
+                    {
+                        // do poprawy wypisiwanie tylko nazw pliku bez stiezki a .txt
+                        Console.WriteLine(dir);
 
+                    }
+                    
+                }
+
+                    
+            
+        }
+      
 
         public static void WhichRecord(string filename)
         {
