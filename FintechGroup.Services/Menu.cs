@@ -1,6 +1,4 @@
-﻿using FintechGroup.Database;
-using FintechGroup.Services;
-using System.Security.Cryptography.X509Certificates;
+﻿using FintechGroup.Services;
 
 namespace FintechGroup
 {
@@ -49,6 +47,7 @@ namespace FintechGroup
             switch (key)
             {
                 case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
                     Console.Clear();
                     Console.WriteLine("Istniejące rekordy:");
                     Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
@@ -63,6 +62,7 @@ namespace FintechGroup
                     }
                     break;
                 case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
                     Console.Clear();
                     Console.WriteLine("1. Dodaj nowy rekord");
                     Console.WriteLine("2. Edytuj istniejący rekord");
@@ -78,8 +78,9 @@ namespace FintechGroup
                             break;
                     }
                     break;
-                    break;
+                   
                 case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
                     Console.Clear();
                     Console.WriteLine("1. Wyszukaj");
                     Console.WriteLine("2. Filtruj");
@@ -90,11 +91,13 @@ namespace FintechGroup
                     {
 
                         case ConsoleKey.D1:
+                        case ConsoleKey.NumPad1:
                             Console.Clear();
                             Wyszukiwanie.WyszukiwanieMenu();
                             break;
 
                         case ConsoleKey.D2:
+                        case ConsoleKey.NumPad2:
                             Console.Clear();
                             Filtracja.FiltracjaMenu();
                             break;
@@ -106,6 +109,7 @@ namespace FintechGroup
                     }
                     break;
                 case ConsoleKey.D4:
+                case ConsoleKey.NumPad4:
                     Console.Clear();
                     DisplayMenuFarewell();
                     break;
@@ -130,16 +134,19 @@ namespace FintechGroup
             switch (alternativeKey)
             {
                 case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
                     Console.Clear();
                     DisplayMainMenu();
                     break;
 
                 case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
                     Console.Clear();
                     DisplayMenuFarewell();
                     break;
 
                 case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
                     Console.Clear();
                     Console.WriteLine("Użyj tej funkcji ponownie.");
                     break;
