@@ -35,7 +35,8 @@ namespace FintechGroup
         }
         public static void DisplayMainMenu()
         {
-            Console.WriteLine("1. Wyświetl istniejące rekordy\n" +
+            Console.WriteLine(
+            "1. Wyświetl istniejące rekordy\n" +
             "2. Zarządzaj rekordami\n" +
             "3. Wyszukaj lub filtruj \n" +
             "4. Zakończ działanie aplikacji\n\n" +
@@ -80,6 +81,7 @@ namespace FintechGroup
                             break;
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
+                            //brak funkcji
                             Console.Clear();
                             break;
                         case ConsoleKey.D3:
@@ -108,12 +110,14 @@ namespace FintechGroup
                         case ConsoleKey.D1:
                         case ConsoleKey.NumPad1:
                             Console.Clear();
+                            //brak funkcji
                             Wyszukiwanie.WyszukiwanieMenu();
                             break;
 
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
                             Console.Clear();
+                            //brak funkcji
                             Filtracja.FiltracjaMenu();
                             break;
 
@@ -138,7 +142,8 @@ namespace FintechGroup
 
         public static void DisplayAlternativeMenu()
         {
-            Console.WriteLine("1. Wróć do głównego menu.\n" +
+            Console.WriteLine(
+               "1. Wróć do głównego menu.\n" +
                "2. Zakończ działanie aplikacji.\n" +
                "3. Użyj tej funkcji ponownie.\n");
             Menu3.AlternativeMenu();

@@ -2,10 +2,9 @@
 using FintechGroup.Database;
 using FintechGroup.Services;
 
-//AddFolder.AddFolders();
-////AddRecord.addrecordname();
-//Menu.DisplayMenuGreeting();
-//Menu.DisplayMainMenu();
+AddFolder.AddFolders();
+Menu.DisplayMenuGreeting();
+Menu.DisplayMainMenu();
 
 
 
