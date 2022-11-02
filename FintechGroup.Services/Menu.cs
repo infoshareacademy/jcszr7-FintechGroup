@@ -1,4 +1,5 @@
 ﻿using FintechGroup.Services;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FintechGroup
 {
@@ -51,16 +52,6 @@ namespace FintechGroup
                 case ConsoleKey.NumPad1:
                     Console.Clear();
                     WorksOnRecord.ReadRecordFile();
-                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje\n\n.");
-                    var key1 = Console.ReadKey();
-
-                    switch (key1.Key)
-                    {
-                        case ConsoleKey.Enter:
-                            Console.Clear();
-                            DisplayAlternativeMenu();
-                            break;
-                    }
                     break;
                 case ConsoleKey.D2:
                 case ConsoleKey.NumPad2:
@@ -81,7 +72,7 @@ namespace FintechGroup
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
                             Console.Clear();
-                            WorksOnRecord.AddRecords();
+                            WorksOnRecord.EditRecord();
                             break;
                         case ConsoleKey.D3:
                         case ConsoleKey.NumPad3:
@@ -168,6 +159,20 @@ namespace FintechGroup
                 case ConsoleKey.NumPad3:
                     Console.Clear();
                     Console.WriteLine("Użyj tej funkcji ponownie.");
+                    
+                    break;
+            }
+        }
+        public static void CallAlternativeMenu()
+        {
+            Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.\n");
+            var key1 = Console.ReadKey();
+
+            switch (key1.Key)
+            {
+                case ConsoleKey.Enter:
+                    Console.Clear();
+                    DisplayAlternativeMenu();
                     break;
             }
         }
