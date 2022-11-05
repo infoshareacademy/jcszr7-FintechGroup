@@ -37,9 +37,8 @@ namespace FintechGroup.Services
                 $"Kurs otwarcia: {startPrice}\n" +
                 $"Kurs zamknięcia: {endPrice}\n");
             Menu.CallAlternativeMenu();
-            //Console.WriteLine($"Database stworzona: {File.GetCreationTimeUtc(filename)}");
-            //Menu.DisplayMainMenu();
         }
+
         public static void DeleteRecord()
         {
             AllRecord();
@@ -81,7 +80,7 @@ namespace FintechGroup.Services
             else
             {
                 Console.Clear();
-                Console.WriteLine("Wpis o tym numer nie istnieje.\n");
+                Console.WriteLine("Wpis o tym numerze nie istnieje.\n");
                 DeleteRecord();
             }
         }
@@ -131,13 +130,12 @@ namespace FintechGroup.Services
             if (File.Exists(fileName))
             {
                 Console.Clear();
-                Console.WriteLine("Podaj kurs owarcia:");
+                Console.WriteLine("Podaj kurs otwarcia:");
                 var startPrice = Console.ReadLine();
                 
 
                 Console.WriteLine("Podaj kurs zamknięcia:");
-                var endPrice = Console.ReadLine();
-                
+                var endPrice = Console.ReadLine();                
 
                 File.GetLastWriteTime(fileName);
 
@@ -177,7 +175,7 @@ namespace FintechGroup.Services
       
         public static void WhichRecord(string filename)
         {
-            Console.WriteLine($"Wpis nazwe rekordu:");
+            Console.WriteLine($"Wpisz nazwę rekordu:");
             var recordname = Console.ReadLine();
             _ = $"{recordname}.txt";
         }
