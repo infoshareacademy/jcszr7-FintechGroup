@@ -105,7 +105,7 @@ namespace FintechGroup
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
                             Console.Clear();
-                            //brak funkcji
+                            //brak funkcji ale dodany opis dla użytkownika (TODO)
                             Filtracja.FiltracjaMenu();
                             break;
 

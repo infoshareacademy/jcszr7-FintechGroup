@@ -1,11 +1,7 @@
-﻿using FintechGroup.Database;
-
-namespace FintechGroup.Services
+﻿namespace FintechGroup.Services
 {
     public class WorksOnRecord
     {
-        private static string filename;
-
         public static void AddRecordName()
         {
             Console.WriteLine($"Podaj nazwę rekordu:");
@@ -24,7 +20,7 @@ namespace FintechGroup.Services
             var endPrice = Console.ReadLine();
             var recordDate = DateTime.Now.ToString("d");
 
-            //zapisiwanie rekodu
+            //zapisywanie rekordu
             using (var writer = File.AppendText($"FinTech Group/{recordName}.txt"))
             {
                 writer.Write($"{startPrice};");
@@ -121,7 +117,7 @@ namespace FintechGroup.Services
         {
             AllRecord();
             Console.WriteLine();
-            //pobieranie rekordu od uzytkownika
+            //pobieranie rekordu od użytkownika
             Console.WriteLine("Podaj nazwę rekordu, który chcesz zaktualizować:");
             var recordName = Console.ReadLine();
             
