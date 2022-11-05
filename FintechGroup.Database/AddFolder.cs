@@ -13,8 +13,6 @@
             {
                 Directory.CreateDirectory(directoryName);
             }
-            //Console.WriteLine($"Databaze wytworzena: {Directory.GetCreationTimeUtc(directoryName)}");
         }
-
     }
 }

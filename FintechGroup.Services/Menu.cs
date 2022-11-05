@@ -1,5 +1,4 @@
 ﻿using FintechGroup.Services;
-using System.Security.Cryptography.X509Certificates;
 
 namespace FintechGroup
 {
@@ -9,7 +8,6 @@ namespace FintechGroup
         public static void DisplayMenuGreeting()
         {
             Console.WriteLine("Witaj, Użytkowniku, w aplikacji FinTech. Co chciałbyś dzisiaj zrobić?\n");
-
         }
 
         public static void DisplayMenuFarewell()
@@ -178,4 +176,3 @@ namespace FintechGroup
         }
     }
 }
-
