@@ -1,11 +1,7 @@
-﻿using FintechGroup.Database;
-
-namespace FintechGroup.Services
+﻿namespace FintechGroup.Services
 {
     public class WorksOnRecord
     {
-        private static string filename;
-
         public static void AddRecordName()
         {
             Console.WriteLine($"Podaj nazwę rekordu:");
@@ -24,7 +20,7 @@ namespace FintechGroup.Services
             var endPrice = Console.ReadLine();
             var recordDate = DateTime.Now.ToString("d");
 
-            //zapisiwanie rekodu
+            //zapisywanie rekordu
             using (var writer = File.AppendText($"FinTech Group/{recordName}.txt"))
             {
                 writer.Write($"{startPrice};");
@@ -37,9 +33,8 @@ namespace FintechGroup.Services
                 $"Kurs otwarcia: {startPrice}\n" +
                 $"Kurs zamknięcia: {endPrice}\n");
             Menu.CallAlternativeMenu();
-            //Console.WriteLine($"Database stworzona: {File.GetCreationTimeUtc(filename)}");
-            //Menu.DisplayMainMenu();
         }
+
         public static void DeleteRecord()
         {
             AllRecord();
@@ -81,7 +76,7 @@ namespace FintechGroup.Services
             else
             {
                 Console.Clear();
-                Console.WriteLine("Wpis o tym numer nie istnieje.\n");
+                Console.WriteLine("Wpis o tym numerze nie istnieje.\n");
                 DeleteRecord();
             }
         }
@@ -115,47 +110,14 @@ namespace FintechGroup.Services
                 Console.WriteLine("Kurs zamknięcia: " + endPrice[i]);
                 Console.WriteLine("Data kursu: " + dateOfCreation[i].ToString("dd/MM/yyyy"));
                 Console.WriteLine();
-            }
-
-            //for (int i = 0; i < startPrice.Count; i++)
-            //{
-            //    Console.WriteLine("Kurs otwarcia: " + startPrice[i]);
-            //}
-
-            //for (int i = 0; i < endPrice.Count; i++)
-            //{
-            //    Console.WriteLine("Kurs zamknięcia: " + endPrice[i]);
-            //}
-
-            //for (int i = 0; i < dateOfCreation.Count; i++)
-            //{
-            //    Console.WriteLine("Data kursu: " + dateOfCreation[i].ToString("dd/MM/yyyy"));
-            //}
-            //var fileDataInput = new StreamReader($"FinTech Group/{fileData}.txt").ReadToEnd().Split(';');
-            //Console.WriteLine($"Dane dla rekordu {fileData}\n\n" +
-            //    $"Kurs otwarcia: {fileDataInput[0]} zł\n" +
-            //    $"Kurs zamknięcia: {fileDataInput[1]} zł\n" +
-            //    $"Data wpisu:" + " " + (File.GetCreationTime($"FinTech Group/{fileData}.txt")));
-            //WhichRecord(filename);
-            //Console.WriteLine($"Wpisz nazwę rekordu:");
-            //var recordname = Console.ReadLine();
-            //var fileName = $"{recordname}.txt";
-            //Console.WriteLine($"Wypis zaznamu {fileName} :\n");
-            //using (var reader = File.OpenText(fileName))
-            //{
-            //    while (reader.EndOfStream == false)
-            //    {
-            //        Console.WriteLine(reader.ReadLine());
-            //        // brak przekstalcenia do listy i wypisanie ladnie tabulatory
-            //    }
-            //}
+            }           
             Menu.CallAlternativeMenu();
         }
         public static void EditRecord()
         {
             AllRecord();
             Console.WriteLine();
-            //pobieranie rekordu od uzytkownika
+            //pobieranie rekordu od użytkownika
             Console.WriteLine("Podaj nazwę rekordu, który chcesz zaktualizować:");
             var recordName = Console.ReadLine();
             
@@ -164,21 +126,18 @@ namespace FintechGroup.Services
             if (File.Exists(fileName))
             {
                 Console.Clear();
-                Console.WriteLine("Podaj kurs owarcia:");
+                Console.WriteLine("Podaj kurs otwarcia:");
                 var startPrice = Console.ReadLine();
                 
 
                 Console.WriteLine("Podaj kurs zamknięcia:");
-                var endPrice = Console.ReadLine();
-                
+                var endPrice = Console.ReadLine();                
 
                 File.GetLastWriteTime(fileName);
 
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine($"{startPrice};{endPrice};{DateTime.Now.ToString("dd/MM/yyyy")}");
-                    //writer.Write($"{endPrice}");
-                    //writer.Write(DateTime.Now.ToString("dd/MM/yyyy"));
                 }
             }
             else
@@ -189,33 +148,10 @@ namespace FintechGroup.Services
                 Menu.CallAlternativeMenu();
             }
             Menu.CallAlternativeMenu();
-
-
-
-            //zapisiwanie rekodu
-            //    if (File.Exists(recordName))
-            //    {
-            //        File.WriteAllText($"FinTech Group/{recordName}.txt", startPrice);
-            //        File.WriteAllText($"FinTech Group/{recordName}.txt", endPrice);
-            //        File.GetLastWriteTime($"FinTech Group/{recordName}.txt");
-            //    }
-            //    //using (var writer = File.AppendText($"FinTech Group/{recordname}.txt"))
-            //    //{
-            //    //    writer.Write($"{startprice};");
-            //    //    writer.Write($"{endprice};");
-            //    //    writer.WriteLine(recorddate);
-            //    //}
-            //    Console.Clear();
-            //    Console.WriteLine(
-            //        $"Zaktualizowano rekord {recordName}:\n" +
-            //        $"Kurs otwarcia: {startPrice}\n" +
-            //        $"Kurs zamknięcia: {startPrice}\n");
-            //    Menu.CallAlternativeMenu();
         }
 
         public static void AllRecord()
         {
-            //string root = new FileInfo(Assembly.GetExecutingAssembly().Location).FullName;
             var root = "FinTech Group";
             string[] files = Directory.GetFiles(root, "*.txt");
 
@@ -231,37 +167,13 @@ namespace FintechGroup.Services
                 var fileName = Path.GetFileNameWithoutExtension(file);
                 Console.WriteLine(fileName);
             }
-           
-            //string[] dirs = Directory.GetFiles(root, "*.txt");
-            //Console.WriteLine("W databazy sie znajduje celkem zaznamow: {0}.", dirs.Length);
-
-
-            //if (dirs.Length == 0)
-            //{
-            //    AddRecordName();
-            //}
-            //else
-            //{
-            //    foreach (string dir in dirs)
-            //    {
-            //        // do poprawy wypisiwanie tylko nazw pliku bez stiezki a .txt
-            //        Console.WriteLine(dir);
-
-            //    }
-
-            //}
-                    
-            
         }
       
-
         public static void WhichRecord(string filename)
         {
-            Console.WriteLine($"Wpis nazwe rekordu:");
+            Console.WriteLine($"Wpisz nazwę rekordu:");
             var recordname = Console.ReadLine();
             _ = $"{recordname}.txt";
         }
-
-
     }
 }
