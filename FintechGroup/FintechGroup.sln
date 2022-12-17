@@ -3,16 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintechGroup", "FintechGroup.csproj", "{899B2C8A-822C-4CF1-839F-C70796FD7612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FintechGroup", "FintechGroup.csproj", "{899B2C8A-822C-4CF1-839F-C70796FD7612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintechGroup.Database", "..\FintechGroup.Database\FintechGroup.Database.csproj", "{D7C29EB8-4A49-4D57-A42B-BCA4507435F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FintechGroup.Database", "..\FintechGroup.Database\FintechGroup.Database.csproj", "{D7C29EB8-4A49-4D57-A42B-BCA4507435F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintechGroup.Services", "..\FintechGroup.Services\FintechGroup.Services.csproj", "{78866897-B636-46A4-8A1E-BE7B6C750B6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FintechGroup.Services", "..\FintechGroup.Services\FintechGroup.Services.csproj", "{78866897-B636-46A4-8A1E-BE7B6C750B6B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23FACF6A-E8CE-454E-BFAB-61FAB95CEB12}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinTechGroup.Domain", "..\FinTechGroup.Domain\FinTechGroup.Domain.csproj", "{42DA0A5E-264A-4D2E-8009-3690F6250A49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinTechGroup.Persistance.EntityFramerowk", "..\FinTechGroup.Persistance.EntityFramerowk\FinTechGroup.Persistance.EntityFramerowk.csproj", "{834ACF88-AB39-4F7E-8ABE-62E659495AA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinTechGroup.Web", "..\FinTechGroup.Web\FinTechGroup.Web.csproj", "{63576F9D-E658-46D3-88E6-B886623D0E69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +38,18 @@ Global
 		{78866897-B636-46A4-8A1E-BE7B6C750B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78866897-B636-46A4-8A1E-BE7B6C750B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78866897-B636-46A4-8A1E-BE7B6C750B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{834ACF88-AB39-4F7E-8ABE-62E659495AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834ACF88-AB39-4F7E-8ABE-62E659495AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834ACF88-AB39-4F7E-8ABE-62E659495AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834ACF88-AB39-4F7E-8ABE-62E659495AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63576F9D-E658-46D3-88E6-B886623D0E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63576F9D-E658-46D3-88E6-B886623D0E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63576F9D-E658-46D3-88E6-B886623D0E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63576F9D-E658-46D3-88E6-B886623D0E69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
