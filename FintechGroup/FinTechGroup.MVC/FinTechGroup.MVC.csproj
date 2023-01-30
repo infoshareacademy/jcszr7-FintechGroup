@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-FinTechGroup.MVC-e1b67270-e51e-4628-8bd1-80600ebee1cf</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FinTechGroup.Persistance.EntityFramework\FinTechGroup.Persistance.EntityFramework.csproj" />
+  </ItemGroup>
+
+</Project>
