@@ -1,0 +1,42 @@
+﻿@using FinTechGroup.Domain;
+
+@model Company
+
+<form method="post">
+    <div class="border p-3 mt4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Add New Company</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="CompanyName"></label>
+            <input asp-for="CompanyName" class="form-control" />
+            <span asp-validation-for="CompanyName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Ticker"></label>
+            <input asp-for="Ticker" class="form-control" />
+            <span asp-validation-for="Ticker" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="SevenDaysAvg"></label>
+            <input asp-for="SevenDaysAvg" class="form-control" />
+            <span asp-validation-for="SevenDaysAvg" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ThirtyDaysAvg"></label>
+            <input asp-for="ThirtyDaysAvg" class="form-control" />
+            <span asp-validation-for="ThirtyDaysAvg" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="Company" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
