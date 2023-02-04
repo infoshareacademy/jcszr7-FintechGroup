@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace FinTechGroup.Domain
+namespace FinTechGroup.Persistance.EntityFramework.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

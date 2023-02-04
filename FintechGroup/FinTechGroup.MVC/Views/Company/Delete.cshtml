@@ -17,7 +17,7 @@
             <label asp-for="Ticker"></label>
             <input asp-for="Ticker" disabled class="form-control" />
             <span asp-validation-for="Ticker" class="text-danger"></span>
-        </div>
+       @* </div>
         <div class="mb-3">
             <label asp-for="SevenDaysAvg"></label>
             <input asp-for="SevenDaysAvg" disabled class="form-control" />
@@ -27,7 +27,7 @@
             <label asp-for="ThirtyDaysAvg"></label>
             <input asp-for="ThirtyDaysAvg" disabled class="form-control" />
             <span asp-validation-for="ThirtyDaysAvg" class="text-danger"></span>
-        </div>
+        </div>*@
         <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
         <a asp-controller="Company" asp-action="Index" class="btn btn-secondary" style="width:150px">
             Back to List

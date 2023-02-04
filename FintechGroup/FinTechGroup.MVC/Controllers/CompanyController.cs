@@ -1,4 +1,5 @@
 ﻿using FinTechGroup.Domain;
+using FinTechGroup.Persistance.EntityFramework.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,6 +31,13 @@ namespace FinTechGroup.Web.Controllers
             }
             return View(companies.ToList());
         }
+
+        public IActionResult Details(int? id)
+        {
+            IEnumerable<ExchangeRate> exchange = _db.ExchangeRates.ToList();
+            return View(exchange);
+        }
+
         [Authorize]
         public ActionResult Index(string sortOrder)
         {
@@ -54,6 +62,26 @@ namespace FinTechGroup.Web.Controllers
             }
             return View(companies.ToList());
 
+        }
+
+        [Authorize]
+        public IActionResult AddDetails()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddDetails(ExchangeRate exchangeRate)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.ExchangeRates.Add(exchangeRate);
+                _db.SaveChanges();
+                return RedirectToAction("Details");
+            }
+            return View(exchangeRate);
         }
 
         [Authorize]

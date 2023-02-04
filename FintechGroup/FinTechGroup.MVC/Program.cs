@@ -1,5 +1,5 @@
 using FinTechGroup;
-using FinTechGroup.Domain;
+using FinTechGroup.Persistance.EntityFramework.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
