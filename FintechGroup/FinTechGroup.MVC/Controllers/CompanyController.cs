@@ -32,7 +32,7 @@ namespace FinTechGroup.Web.Controllers
             return View(companies.ToList());
         }
 
-        public IActionResult Details(int? id)
+        public IActionResult Details()
         {
             IEnumerable<ExchangeRate> exchange = _db.ExchangeRates.ToList();
             return View(exchange);
@@ -73,11 +73,11 @@ namespace FinTechGroup.Web.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddDetails(ExchangeRate exchangeRate)
+        public IActionResult AddDetails( ExchangeRate exchangeRate)
         {
             if (ModelState.IsValid)
             {
-                _db.ExchangeRates.Add(exchangeRate);
+                _db.ExchangeRates.AddRange(exchangeRate);
                 _db.SaveChanges();
                 return RedirectToAction("Details");
             }
@@ -93,7 +93,7 @@ namespace FinTechGroup.Web.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Company company)
+        public IActionResult Create(Company company, ExchangeRate exchange)
         {
             if (ModelState.IsValid)
             {

@@ -6,7 +6,7 @@
         public string CompanyName { get; set; }
 
         public string Ticker { get; set; }
-        public ICollection<ExchangeRate> ExchangeRates { get; set; }
+        public ICollection<ExchangeRate>? ExchangeRates { get; set; }
 
         public double SevenDaysAvg { get; set; }
 

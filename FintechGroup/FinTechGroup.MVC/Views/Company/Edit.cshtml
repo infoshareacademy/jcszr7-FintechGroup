@@ -18,7 +18,7 @@
             <input asp-for="Ticker" class="form-control" />
             <span asp-validation-for="Ticker" class="text-danger"></span>
         </div>
-        <div class="mb-3">
+@*        <div class="mb-3">
             <label asp-for="SevenDaysAvg"></label>
             <input asp-for="SevenDaysAvg" class="form-control" />
             <span asp-validation-for="SevenDaysAvg" class="text-danger"></span>
@@ -27,7 +27,7 @@
             <label asp-for="ThirtyDaysAvg"></label>
             <input asp-for="ThirtyDaysAvg" class="form-control" />
             <span asp-validation-for="ThirtyDaysAvg" class="text-danger"></span>
-        </div>
+        </div>*@
         <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
         <a asp-controller="Company" asp-action="Index" class="btn btn-secondary" style="width:150px">
             Back to List
