@@ -8,6 +8,9 @@
         public string Ticker { get; set; }
         public ICollection<ExchangeRate>? ExchangeRates { get; set; }
 
+        //public double Open { get; set; }
+        //public double Close { get; set; }
+
         public double SevenDaysAvg { get; set; }
 
         public double ThirtyDaysAvg { get; set; }

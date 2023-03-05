@@ -2,11 +2,15 @@
 using FinTechGroup.Persistance.EntityFramework.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Data;
+using System.Net.Http.Headers;
 
 namespace FinTechGroup.Web.Controllers
 {
     public class CompanyController : Controller
     {
+        string baseURL = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=D4JB6QOJPCTET81W";
 
         private readonly ApplicationDbContext _db;
 
@@ -15,8 +19,28 @@ namespace FinTechGroup.Web.Controllers
             _db = db;
         }
 
-        public IActionResult IndexForGuests()
+        public async Task <IActionResult> IndexForGuests()
         {
+            DataTable dt = new DataTable();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseURL);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage getData = await client.GetAsync(baseURL);
+
+                if (getData.IsSuccessStatusCode)
+                {
+                    string result = getData.Content.ReadAsStringAsync().Result;
+                    dt = JsonConvert.DeserializeObject<DataTable>(result);
+                }
+
+                else
+                {
+                    Console.WriteLine("Error calling web API");
+                }
+            }
             IEnumerable<Company> companies = _db.Companies.ToList();
             return View(companies);
         }
