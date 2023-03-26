@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\FinTechGroup.Persistance.EntityFramework\FinTechGroup.Persistance.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\FintechGroup.Services\FintechGroup.Services.csproj" />
   </ItemGroup>
 
 </Project>

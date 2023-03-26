@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Data;
 using System.Net.Http.Headers;
+using static FintechGroup.Services.AlphaVantageModels;
 
 namespace FinTechGroup.Web.Controllers
 {
@@ -33,7 +34,7 @@ namespace FinTechGroup.Web.Controllers
                 if (getData.IsSuccessStatusCode)
                 {
                     string result = getData.Content.ReadAsStringAsync().Result;
-                    dt = JsonConvert.DeserializeObject<DataTable>(result);
+                    var rootObject = JsonConvert.DeserializeObject<Root>(result);
                 }
 
                 else
@@ -51,7 +52,7 @@ namespace FinTechGroup.Web.Controllers
                             select c;
             if (!String.IsNullOrEmpty(searchString))
             {
-                companies = companies.Where(c => c.CompanyName.Contains(searchString) || c.Ticker.Contains(searchString));              
+                companies = companies.Where(c => c.CompanyName.Contains(searchString) || c.Ticker.Contains(searchString));
             }
             return View(companies.ToList());
         }
