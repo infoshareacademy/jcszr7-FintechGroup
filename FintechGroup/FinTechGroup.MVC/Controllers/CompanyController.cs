@@ -1,4 +1,5 @@
-﻿using FinTechGroup.Domain;
+﻿using FintechGroup.Services;
+using FinTechGroup.Domain;
 using FinTechGroup.Persistance.EntityFramework.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,38 +12,27 @@ namespace FinTechGroup.Web.Controllers
 {
     public class CompanyController : Controller
     {
-        string baseURL = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=D4JB6QOJPCTET81W";
+
 
         private readonly ApplicationDbContext _db;
+        private readonly IAlphaVantageService alphaVantageService;
 
-        public CompanyController(ApplicationDbContext db)
+        public CompanyController(ApplicationDbContext db, IAlphaVantageService alphaVantageService)
         {
-            _db = db;
+            _db = db ?? throw new ArgumentNullException(nameof(db));
+            this.alphaVantageService = alphaVantageService ?? throw new ArgumentNullException(nameof(alphaVantageService));
         }
 
         public async Task <IActionResult> IndexForGuests()
         {
-            DataTable dt = new DataTable();
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(baseURL);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage getData = await client.GetAsync(baseURL);
-
-                if (getData.IsSuccessStatusCode)
-                {
-                    string result = getData.Content.ReadAsStringAsync().Result;
-                    var rootObject = JsonConvert.DeserializeObject<Root>(result);
-                }
-
-                else
-                {
-                    Console.WriteLine("Error calling web API");
-                }
-            }
+            var rootInfo = await alphaVantageService.GetAlphaVantageCompanyRootInfo("IBM");
             IEnumerable<Company> companies = _db.Companies.ToList();
+
+
+            // Tu kończy się odpowiedzialność tego serwisu pobierającego dane
+            // i tutaj przekształcamy te dane to widoku "użytkowniko-friendly"
+            DataTable dt = new DataTable();
+
             return View(companies);
         }
 

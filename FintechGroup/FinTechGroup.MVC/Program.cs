@@ -1,3 +1,4 @@
+using FintechGroup.Services;
 using FinTechGroup;
 using FinTechGroup.Persistance.EntityFramework.Data;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +11,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddTransient<IAlphaVantageService, AlphaVantageService>();
+builder.Services.AddTransient<IAlphaVantageUrlBuilder, AlphaVantageUrlBuilder>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
