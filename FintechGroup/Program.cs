@@ -4,9 +4,3 @@ using FintechGroup.Database;
 AddFolder.AddFolders();
 Menu.DisplayMenuGreeting();
 Menu.DisplayMainMenu();
-
-
-
-
-
-
