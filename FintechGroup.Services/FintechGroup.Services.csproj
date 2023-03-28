@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FintechGroup.Database\FintechGroup.Database.csproj" />
+  </ItemGroup>
+
 </Project>

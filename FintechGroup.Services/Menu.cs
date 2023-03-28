@@ -8,6 +8,7 @@ namespace FintechGroup
         public static void DisplayMenuGreeting()
         {
             Console.WriteLine("Witaj, Użytkowniku, w aplikacji FinTech. Co chciałbyś dzisiaj zrobić?\n");
+
         }
 
         public static void DisplayMenuFarewell()
@@ -50,6 +51,16 @@ namespace FintechGroup
                 case ConsoleKey.NumPad1:
                     Console.Clear();
                     WorksOnRecord.ReadRecordFile();
+                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje\n\n.");
+                    var key1 = Console.ReadKey();
+
+                    switch (key1.Key)
+                    {
+                        case ConsoleKey.Enter:
+                            Console.Clear();
+                            DisplayAlternativeMenu();
+                            break;
+                    }
                     break;
                 case ConsoleKey.D2:
                 case ConsoleKey.NumPad2:
@@ -70,7 +81,7 @@ namespace FintechGroup
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
                             Console.Clear();
-                            WorksOnRecord.EditRecord();
+                            WorksOnRecord.AddRecords();
                             break;
                         case ConsoleKey.D3:
                         case ConsoleKey.NumPad3:
@@ -79,7 +90,7 @@ namespace FintechGroup
                             break;
                         case ConsoleKey.Enter:
                             Console.Clear();
-                            DisplayAlternativeMenuForRecordManagement();
+                            DisplayAlternativeMenu();
                             break;
                     }
                     break;
@@ -105,13 +116,13 @@ namespace FintechGroup
                         case ConsoleKey.D2:
                         case ConsoleKey.NumPad2:
                             Console.Clear();
-                            //brak funkcji ale dodany opis dla użytkownika (TODO)
+                            //brak funkcji
                             Filtracja.FiltracjaMenu();
                             break;
 
                         case ConsoleKey.Enter:
                             Console.Clear();
-                            DisplayAlternativeMenuForSearchOrFiltering();
+                            DisplayAlternativeMenu();
                             break;
                     }
                     break;
@@ -128,24 +139,6 @@ namespace FintechGroup
             }
         }
 
-        public static void DisplayAlternativeMenuForRecordManagement()
-        {
-            Console.WriteLine(
-               "1. Wróć do głównego menu.\n" +
-               "2. Zakończ działanie aplikacji.\n" +
-               "3. Użyj tej funkcji ponownie.\n");
-            Menu3.AlternativeMenuForRecordManagement();
-        }
-
-        public static void DisplayAlternativeMenuForSearchOrFiltering()
-        {
-            Console.WriteLine(
-               "1. Wróć do głównego menu.\n" +
-               "2. Zakończ działanie aplikacji.\n" +
-               "3. Użyj tej funkcji ponownie.\n");
-            Menu3.AlternativeMenuForFIlteringOrSearching();
-        }
-
         public static void DisplayAlternativeMenu()
         {
             Console.WriteLine(
@@ -153,107 +146,6 @@ namespace FintechGroup
                "2. Zakończ działanie aplikacji.\n" +
                "3. Użyj tej funkcji ponownie.\n");
             Menu3.AlternativeMenu();
-        }
-
-        public static void SelectAlternativeMenuOptionsForRecordManagement(ConsoleKey alternativeKey)
-        {
-            switch (alternativeKey)
-            {
-                case ConsoleKey.D1:
-                case ConsoleKey.NumPad1:
-                    Console.Clear();
-                    DisplayMainMenu();
-                    break;
-
-                case ConsoleKey.D2:
-                case ConsoleKey.NumPad2:
-                    Console.Clear();
-                    DisplayMenuFarewell();
-                    break;
-
-                case ConsoleKey.D3:
-                case ConsoleKey.NumPad3:
-                    Console.Clear();
-                    Console.WriteLine("1. Dodaj nowy rekord");
-                    Console.WriteLine("2. Dodaj nowy wpis do rekordu");
-                    Console.WriteLine("3. Usuń rekord");
-                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.\n");
-                    var key2 = Console.ReadKey();
-
-                    switch (key2.Key)
-                    {
-                        case ConsoleKey.D1:
-                        case ConsoleKey.NumPad1:
-                            Console.Clear();
-                            WorksOnRecord.AddRecordName();
-                            break;
-                        case ConsoleKey.D2:
-                        case ConsoleKey.NumPad2:
-                            Console.Clear();
-                            WorksOnRecord.EditRecord();
-                            break;
-                        case ConsoleKey.D3:
-                        case ConsoleKey.NumPad3:
-                            Console.Clear();
-                            WorksOnRecord.DeleteRecord();
-                            break;
-                        case ConsoleKey.Enter:
-                            Console.Clear();
-                            DisplayAlternativeMenuForRecordManagement();
-                            break;
-                    }
-                    break;
-            }
-        }
-
-        public static void SelectAlternativeMenuOptionsForSearchOrFiltering(ConsoleKey alternativeKey)
-        {
-            switch (alternativeKey)
-            {
-                case ConsoleKey.D1:
-                case ConsoleKey.NumPad1:
-                    Console.Clear();
-                    DisplayMainMenu();
-                    break;
-
-                case ConsoleKey.D2:
-                case ConsoleKey.NumPad2:
-                    Console.Clear();
-                    DisplayMenuFarewell();
-                    break;
-
-                case ConsoleKey.D3:
-                case ConsoleKey.NumPad3:
-                    Console.Clear();
-                    Console.WriteLine("1. Wyszukaj");
-                    Console.WriteLine("2. Filtruj");
-                    Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.");
-                    var key4 = Console.ReadKey();
-
-                    switch (key4.Key)
-                    {
-
-                        case ConsoleKey.D1:
-                        case ConsoleKey.NumPad1:
-                            Console.Clear();
-                            //brak funkcji
-                            Wyszukiwanie.WyszukiwanieMenu();
-                            break;
-
-                        case ConsoleKey.D2:
-                        case ConsoleKey.NumPad2:
-                            Console.Clear();
-                            //brak funkcji
-                            Filtracja.FiltracjaMenu();
-                            break;
-
-                        case ConsoleKey.Enter:
-                            Console.Clear();
-                            DisplayAlternativeMenuForSearchOrFiltering();
-                            break;
-                    }
-                    break;
-            }
         }
 
         public static void SelectAlternativeMenuOptions(ConsoleKey alternativeKey)
@@ -275,23 +167,10 @@ namespace FintechGroup
                 case ConsoleKey.D3:
                 case ConsoleKey.NumPad3:
                     Console.Clear();
-                    WorksOnRecord.ReadRecordFile();
-                    break;
-            }
-        }
-
-        public static void CallAlternativeMenu()
-        {
-            Console.WriteLine("\nNaciśnij 'Enter', aby wyświetlić dodatkowe opcje.\n");
-            var key1 = Console.ReadKey();
-
-            switch (key1.Key)
-            {
-                case ConsoleKey.Enter:
-                    Console.Clear();
-                    DisplayAlternativeMenu();
+                    Console.WriteLine("Użyj tej funkcji ponownie.");
                     break;
             }
         }
     }
 }
+

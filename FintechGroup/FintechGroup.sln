@@ -3,18 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FintechGroup.Services", "..\FintechGroup.Services\FintechGroup.Services.csproj", "{78866897-B636-46A4-8A1E-BE7B6C750B6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintechGroup", "FintechGroup.csproj", "{899B2C8A-822C-4CF1-839F-C70796FD7612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintechGroup.Database", "..\FintechGroup.Database\FintechGroup.Database.csproj", "{D7C29EB8-4A49-4D57-A42B-BCA4507435F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintechGroup.Services", "..\FintechGroup.Services\FintechGroup.Services.csproj", "{78866897-B636-46A4-8A1E-BE7B6C750B6B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23FACF6A-E8CE-454E-BFAB-61FAB95CEB12}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinTechGroup.Domain", "..\FinTechGroup.Domain\FinTechGroup.Domain.csproj", "{42DA0A5E-264A-4D2E-8009-3690F6250A49}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinTechGroup.Persistance.EntityFramework", "..\FinTechGroup.Persistance.EntityFramework\FinTechGroup.Persistance.EntityFramework.csproj", "{B9D2BC35-1495-4701-AE41-215BA52BD1CD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinTechGroup.MVC", "FinTechGroup.MVC\FinTechGroup.MVC.csproj", "{77E5287C-A3DD-4447-95F1-44327A556BCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,22 +20,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{899B2C8A-822C-4CF1-839F-C70796FD7612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899B2C8A-822C-4CF1-839F-C70796FD7612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899B2C8A-822C-4CF1-839F-C70796FD7612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899B2C8A-822C-4CF1-839F-C70796FD7612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C29EB8-4A49-4D57-A42B-BCA4507435F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C29EB8-4A49-4D57-A42B-BCA4507435F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C29EB8-4A49-4D57-A42B-BCA4507435F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C29EB8-4A49-4D57-A42B-BCA4507435F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78866897-B636-46A4-8A1E-BE7B6C750B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78866897-B636-46A4-8A1E-BE7B6C750B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78866897-B636-46A4-8A1E-BE7B6C750B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78866897-B636-46A4-8A1E-BE7B6C750B6B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42DA0A5E-264A-4D2E-8009-3690F6250A49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9D2BC35-1495-4701-AE41-215BA52BD1CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9D2BC35-1495-4701-AE41-215BA52BD1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9D2BC35-1495-4701-AE41-215BA52BD1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9D2BC35-1495-4701-AE41-215BA52BD1CD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77E5287C-A3DD-4447-95F1-44327A556BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77E5287C-A3DD-4447-95F1-44327A556BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77E5287C-A3DD-4447-95F1-44327A556BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77E5287C-A3DD-4447-95F1-44327A556BCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
